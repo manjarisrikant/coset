@@ -4,6 +4,10 @@
 
 - Add `X5Chain` type, with `Header::x5chain()` and `HeaderBuilder::x5chain()` helpers for the
   `x5chain` header parameter (RFC 9360).
+- Limit default CBOR deserialization recursion depth in `CborSerializable::from_slice` and
+  `TaggedCborSerializable::from_tagged_slice` to `DEFAULT_CBOR_RECURSION_LIMIT` (`16`), and add
+  `from_slice_with_recursion_limit` and `from_tagged_slice_with_recursion_limit` for callers
+  needing a custom limit.
 
 ## 0.4.2 - 2026-03-02
 
